@@ -1,6 +1,11 @@
 # FSE-theme
 WordPress Full Site Editing theme
 
+## FSE Block-Theme setup
+
+- Block-theme must include templates/index.html file. ( Along with index.php & style.css file )
+- Template parts must include inside Parts folder.
+- theme.json file is option but strongly recommended
 ## What is included in this Repo: 
 
 - Block Templates.
