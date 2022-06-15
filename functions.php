@@ -6,12 +6,12 @@
  * @package electra
  */
 
-if ( ! defined( 'ELECTRA_CSS_URI' ) ) {
-    define( 'ELECTRA_CSS_URI', untrailingslashit( get_template_directory_uri() ) . '/assets/css' );
+if ( ! defined( 'FSE_BLOCK_THEME_CSS_URI' ) ) {
+    define( 'FSE_BLOCK_THEME_CSS_URI', untrailingslashit( get_template_directory_uri() ) . '/assets/css' );
 }
 
-if ( ! defined( 'ELECTRA_CSS_DIR_PATH' ) ) {
-    define( 'ELECTRA_CSS_DIR_PATH', untrailingslashit( get_template_directory() ) . '/assets/css' );
+if ( ! defined( 'FSE_BLOCK_THEME_CSS_DIR_PATH' ) ) {
+    define( 'FSE_BLOCK_THEME_CSS_DIR_PATH', untrailingslashit( get_template_directory() ) . '/assets/css' );
 }
 
 /**
@@ -19,7 +19,7 @@ if ( ! defined( 'ELECTRA_CSS_DIR_PATH' ) ) {
  *
  * @return void
  */
-function electra_setup_theme() {
+function fse_block_theme_setup_theme() {
 
     /**
      * Enable support for Post Thumbnails on posts and pages.
@@ -81,14 +81,20 @@ function electra_setup_theme() {
     ] );
 }
 
-add_action( 'after_setup_theme', 'electra_setup_theme' );
+add_action( 'after_setup_theme', 'fse-block-theme' );
 
 /**
  * Register Styles.
  */
-function electra_register_styles() {
-    wp_register_style( 'main-css', ELECTRA_CSS_URI . '/main.css', [], filemtime( ELECTRA_CSS_DIR_PATH . '/main.css' ), 'all' );
+function fse_block_theme_register_styles() {
+    wp_register_style(
+        'main-css',
+        FSE_BLOCK_THEME_CSS_URI . '/main.css',
+        array(),
+        filemtime( FSE_BLOCK_THEME_CSS_DIR_PATH . '/main.css' ),
+        'all',
+    );
     wp_enqueue_style( 'main-css' );
 }
 
-add_action( 'wp_enqueue_scripts', 'electra_register_styles' );
+add_action( 'wp_enqueue_scripts', 'fse_block_theme_register_styles' );

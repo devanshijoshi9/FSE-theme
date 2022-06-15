@@ -11,7 +11,7 @@ WordPress Full Site Editing theme
 - Block Templates.
 - Block Template Parts.
 - Reuse of Block Template Parts.
-- Add Custom Global styles.
+- Modify Default style using theme.json ( Add custom typography )
 
 ## Process:
 
@@ -31,6 +31,7 @@ WordPress Full Site Editing theme
 **Steps to create Footer Block template Part for Single Post page**
 - Use header and Footer Template Parts.
 - In between these two Template Parts, Add a 2-column layout to show Post data on the left side and the Sidebar ( Contain search, calender, and gallery ) Template part.
+
 
 **Note:** All Block Template Parts are `Custom Post Types` and the post_type is `wp_template_part`.
 **Note:** All Block Templates are `Custom Post Types` and the post_type is `wp_temaples` 
