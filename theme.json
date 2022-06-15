@@ -21,7 +21,18 @@
             "palette": [],
             "text": true
         },
-        "custom": {},
+        "custom": {
+			"typography": {
+                "scale": 1.250,
+				"normal": "1rem",
+                "tiny":   "calc(var(--wp--custom--typography--small) / var(--wp--custom--typography--scale))",
+                "small":   "calc(var(--wp--custom--typography--normal) / var(--wp--custom--typography--scale))",
+                "large":   "calc(var(--wp--custom--typography--normal) * var(--wp--custom--typography--scale))",
+                "extra-large":   "calc(var(--wp--custom--typography--large) * var(--wp--custom--typography--scale))",
+                "huge":  "calc(var(--wp--custom--typography--extra-large) * var(--wp--custom--typography--scale))",
+                "gigantic": "calc(var(--wp--custom--typography--huge) * var(--wp--custom--typography--scale))"
+            }
+		},
         "layout": {
             "contentSize": "800px",
             "wideSize": "1000px"
@@ -36,7 +47,18 @@
             "customFontSize": true,
             "dropCap": true,
             "fontFamilies": [],
-            "fontSizes": [],
+            "fontSizes": [
+				{
+					"name": "Large",
+					"size": "clamp(var(--wp--custom--typography--normal), calc(1rem + var(--wp--custom--typography--large--preferred, 3vw)), var(--wp--custom--typography--large))",
+					"slug": "large"
+				},
+				{
+					"name": "Extra Large",
+					"size": "clamp(var(--wp--custom--typography--large), calc(1rem + var(--wp--custom--typography--extra-large--preferred, 4vw)), var(--wp--custom--typography--extra-large))",
+					"slug": "extra-large"
+				}
+			],
             "fontStyle": true,
             "fontWeight": true,
             "letterSpacing": true,
